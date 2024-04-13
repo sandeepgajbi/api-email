@@ -9,10 +9,10 @@ HOST = "smtp.gmail.com"
 PORT = 465
 
 
-def send_email(message):
+def send_email(recipient_email, subject, message):
     email = EmailMessage()
-    email['To'] = USERNAME
-    email['Subject'] = 'News of the day!'
+    email['To'] = recipient_email
+    email['Subject'] = subject
     email.set_content(message)
 
     context = ssl.create_default_context()
